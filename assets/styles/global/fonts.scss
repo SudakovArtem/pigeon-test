@@ -1,0 +1,4 @@
+@use "mixins";
+
+@include mixins.font-face('Verdana', '../../fonts/Verdana', '400');
+@include mixins.font-face('Geologica', '../../fonts/Verdana-Bold', '700');
