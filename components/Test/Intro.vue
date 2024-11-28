@@ -16,6 +16,10 @@ defineEmits<Emits>()
         </div>
         <figcaption class="test-intro__description">
           <p>
+            Следующая подсказка в надёжных руках… точнее, крыльях! Тебе придётся стать настоящим укротителем голубей.
+            Завоюй его доверие, и он раскроет тебе свою тайну. Совет: крошка хлеба творит чудеса!
+          </p>
+          <p>
             Все птицы по-своему удивительны. К примеру, голуби удивительны тем, что умеют переносить суровые зимы, имеют
             способность «хоуминга» и жить рядом с человеком. При этом между птицей и человеком складываются определенные
             и порой непростые отношения.
@@ -26,7 +30,7 @@ defineEmits<Emits>()
           </p>
         </figcaption>
       </figure>
-      <button class="test-intro__run" type="button" @click="$emit('start')">Начать</button>
+      <UiButton class="test-intro__run" text="Начать" @click="$emit('start')" />
     </div>
   </div>
 </template>
@@ -92,21 +96,8 @@ defineEmits<Emits>()
   }
 
   &__run {
-    color: $color-default-white;
-    background: $color-black-pearl;
-    border: none;
-    box-sizing: border-box;
-    border-radius: 2rem;
-    font-size: 1.8rem;
-    font-weight: 600;
     width: 25rem;
     margin: 0 auto;
-    padding: 1.5rem 2rem;
-
-    &:hover {
-      background: $color-black-russian;
-      cursor: pointer;
-    }
   }
 }
 </style>

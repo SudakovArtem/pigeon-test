@@ -25,7 +25,7 @@ const getResultText = (value: number): string => {
   }
 
   if (value >= 25) {
-    return 'Поздравляем! Ты пользуешься уважением у голубя. Цени это!'
+    return 'Поздравляем! Ты пользуешься уважением у голубя. Цени это! Держи следующую подсказку'
   }
 
   return 'Ну в общем и целом голубь относится к тебе нормально. А это много значит.'
@@ -33,6 +33,13 @@ const getResultText = (value: number): string => {
 
 const onStart = () => {
   isStarted.value = true
+}
+
+const onReset = () => {
+  isStarted.value = false
+  isFinished.value = false
+  currentQuestion.value = 0
+  answers.value = questions.map(() => '')
 }
 
 const onChange = (): void => {
@@ -61,7 +68,7 @@ const onChange = (): void => {
             @change="onChange"
           />
         </template>
-        <TestResutl v-if="isFinished" key="result" :result="resultText" :points="resultPoints" />
+        <TestResutl v-if="isFinished" key="result" :result="resultText" :points="resultPoints" @reset="onReset" />
       </TransitionGroup>
     </BaseContainer>
   </section>
